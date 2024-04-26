@@ -146,6 +146,7 @@ function selectDiscountCodeOption(value) {
 
 function setupEventHandlers() {
     // Listen to events on the form
+    console.log("TEST - index.js - setupEventHandlers()");
     document.getElementById('done').addEventListener('click', onDoneButtonClick);
     document.getElementById('cancel').addEventListener('click', onCancelButtonClick);
     document.getElementById('discount-code').addEventListener('change', onDiscountCodeSelectChange);
