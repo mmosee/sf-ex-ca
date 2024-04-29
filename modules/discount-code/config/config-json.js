@@ -69,6 +69,11 @@ module.exports = function configJSON(req) {
               dataType: 'Number',
               direction: 'out',
               access: 'visible'
+            },
+            test1: {
+              dataType: 'Text',
+              direction: 'out',
+              access: 'visible'
             }
           }]
         }
