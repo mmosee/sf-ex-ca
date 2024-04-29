@@ -38,6 +38,8 @@ module.exports = function discountCodeExample(app, options) {
     app.get('/modules/discount-code/config.json', function(req, res) {
         // Journey Builder looks for config.json when the canvas loads.
         // We'll dynamically generate the config object with a function
+        console.log('debug: /modules/discount-code/config.json');
+        console.log(" req.body", JSON.stringify(req.body));
         return res.status(200).json(configJSON(req));
     });
 
@@ -59,6 +61,7 @@ module.exports = function discountCodeExample(app, options) {
      */
     app.post('/modules/discount-code/save', function(req, res) {
         console.log('debug: /modules/discount-code/save');
+        console.log(" req.body", JSON.stringify(req.body));
         return res.status(200).json({});
     });
 
@@ -74,6 +77,7 @@ module.exports = function discountCodeExample(app, options) {
      */
     app.post('/modules/discount-code/publish', function(req, res) {
         console.log('debug: /modules/discount-code/publish');
+        console.log(" req.body", JSON.stringify(req.body));
         return res.status(200).json({});
     });
 
@@ -88,6 +92,7 @@ module.exports = function discountCodeExample(app, options) {
      */
     app.post('/modules/discount-code/validate', function(req, res) {
         console.log('debug: /modules/discount-code/validate');
+        console.log(" req.body", JSON.stringify(req.body));
         return res.status(200).json({});
     });
 
@@ -104,6 +109,7 @@ module.exports = function discountCodeExample(app, options) {
      */
     app.post('/modules/discount-code/stop', function(req, res) {
         console.log('debug: /modules/discount-code/stop');
+        console.log(" req.body", JSON.stringify(req.body));
         return res.status(200).json({});
     });
 
