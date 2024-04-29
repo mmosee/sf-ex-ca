@@ -72,8 +72,12 @@ function onInitActivity(payload) {
     // this would be set on the server side when the activity executes
     // (take a look at execute() in ./discountCode/app.js to see where that happens)
     const discountArgument = inArguments.find((arg) => arg.discount);
+    // TEST
+    // const test1Argument = inArguments.find((arg) => arg.test1);
 
     console.log('Discount Argument', discountArgument);
+    // TEST
+    // console.log('test1 Argument', test1Argument);
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {
@@ -96,6 +100,7 @@ function onDoneButtonClick() {
 
     activity.arguments.execute.inArguments = [{
         discount: option.value,
+        test2: 'test2',
     }];
 
     // you can set the name that appears below the activity with the name property
