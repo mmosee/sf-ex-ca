@@ -76,7 +76,7 @@ function onInitActivity(payload) {
     console.log('Discount Argument', discountArgument);
 
     // TEST
-    console.log('arg: ', arg);
+    console.log('test3');;
     const test1Argument = inArguments.find((arg) => arg.test1);
     const SubscriberKeyArgument = inArguments.find((arg) => arg.SubscriberKey);
     const ContactKeyArgument = inArguments.find((arg) => arg.ContactKey);
