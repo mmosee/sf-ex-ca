@@ -20,14 +20,21 @@ module.exports = function configJSON(req) {
         inArguments: [
           {
             discount: 10,
-            test0: 'test0',
-            ContactKey: "{{Contact.Default.ContactKey}}",
-            Phone: "{{Contact.Default.Phone}}"
+            test0: 'test0'
+          },
+          {
+            contactIdentifier: "{{Contact.Key}}"
+          },
+          {
+            Contactkey: "{{Contact.Default.ContactKey}}"
           }
         ],
         outArguments: [
           {
             Name: "{{Contact.Default.Name}}"
+          },
+          {
+            foundSignupDate: ""
           }
         ],
         // Fill in the host with the host that this is running on.
@@ -64,18 +71,7 @@ module.exports = function configJSON(req) {
     schema: {
       arguments: {
         execute: {
-          inArguments: [{
-            ContactKey: {
-              dataType: 'Text',
-              direction: 'in',
-              access: 'visible'
-            },
-            Phone: {
-              dataType: 'Phone',
-              direction: 'out',
-              access: 'visible'
-            }
-          }],
+          inArguments: [],
           outArguments: [{
             discountCode: {
               dataType: 'Text',
@@ -88,11 +84,6 @@ module.exports = function configJSON(req) {
               access: 'visible'
             },
             test0: {
-              dataType: 'Text',
-              direction: 'out',
-              access: 'visible'
-            },
-            Name: {
               dataType: 'Text',
               direction: 'out',
               access: 'visible'
