@@ -21,22 +21,9 @@ module.exports = function configJSON(req) {
           {
             discount: 10,
             test0: 'test0'
-          },
-          {
-            contactIdentifier: "{{Contact.Key}}"
-          },
-          {
-            Contactkey: "{{Contact.Default.ContactKey}}"
           }
         ],
-        outArguments: [
-          {
-            Name: "{{Contact.Default.Name}}"
-          },
-          {
-            foundSignupDate: ""
-          }
-        ],
+        outArguments: [],
         // Fill in the host with the host that this is running on.
         // It must run under HTTPS
         url: `https://${req.headers.host}/modules/discount-code/execute`,
