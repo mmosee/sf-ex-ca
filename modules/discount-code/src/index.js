@@ -76,17 +76,7 @@ function onInitActivity(payload) {
     console.log('Discount Argument', discountArgument);
 
     // TEST
-    console.log('test3');;
-    const test1Argument = inArguments.find((arg) => arg.test1);
-    const SubscriberKeyArgument = inArguments.find((arg) => arg.SubscriberKey);
-    const ContactKeyArgument = inArguments.find((arg) => arg.ContactKey);
-    const PhoneArgument = inArguments.find((arg) => arg.Phone);
-    const FirstNameArgument = inArguments.find((arg) => arg.FirstName);
-    console.log('test1Argument: ', test1Argument);
-    console.log('SubscriberKeyArgument: ', SubscriberKeyArgument);
-    console.log('ContactKeyArgument: ', ContactKeyArgument);
-    console.log('PhoneArgument: ', PhoneArgument);
-    console.log('FirstNameArgument: ', FirstNameArgument);
+    console.log('test4');
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {
@@ -107,10 +97,11 @@ function onDoneButtonClick() {
     const select = document.getElementById('discount-code');
     const option = select.options[select.selectedIndex];
 
-    activity.arguments.execute.inArguments = [{
-        discount: option.value,
-        test2: 'test2',
-    }];
+    // activity.arguments.execute.inArguments = [{
+    //     discount: option.value,
+    //     test2: 'test2',
+    // }];
+    console.log('activity.arguments.execute.inArguments', activity.arguments.execute.inArguments);
 
     // you can set the name that appears below the activity with the name property
     activity.name = `Issue ${activity.arguments.execute.inArguments[0].discount}% Code`;
@@ -122,6 +113,32 @@ function onDoneButtonClick() {
 
     connection.trigger('updateActivity', activity);
 }
+
+// TEST - onDoneButtonClick 원본
+// function onDoneButtonClick() {
+//     // we set must metaData.isConfigured in order to tell JB that
+//     // this activity is ready for activation
+//     activity.metaData.isConfigured = true;
+
+//     // get the option that the user selected and save it to
+//     const select = document.getElementById('discount-code');
+//     const option = select.options[select.selectedIndex];
+
+//     activity.arguments.execute.inArguments = [{
+//         discount: option.value,
+//         test2: 'test2',
+//     }];
+
+//     // you can set the name that appears below the activity with the name property
+//     activity.name = `Issue ${activity.arguments.execute.inArguments[0].discount}% Code`;
+
+//     console.log('------------ triggering:updateActivity({obj}) ----------------');
+//     console.log('Sending message back to updateActivity');
+//     console.log('saving\n', JSON.stringify(activity, null, 4));
+//     console.log('--------------------------------------------------------------');
+
+//     connection.trigger('updateActivity', activity);
+// }
 
 function onCancelButtonClick() {
     // tell Journey Builder that this activity has no changes.
@@ -160,7 +177,6 @@ function selectDiscountCodeOption(value) {
 
 function setupEventHandlers() {
     // Listen to events on the form
-    console.log("TEST - index.js - setupEventHandlers()");
     document.getElementById('done').addEventListener('click', onDoneButtonClick);
     document.getElementById('cancel').addEventListener('click', onCancelButtonClick);
     document.getElementById('discount-code').addEventListener('change', onDiscountCodeSelectChange);
