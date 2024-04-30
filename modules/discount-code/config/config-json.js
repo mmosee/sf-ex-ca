@@ -19,8 +19,10 @@ module.exports = function configJSON(req) {
         // See: https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/how-data-binding-works.htm
         inArguments: [
           {
-            discount: 10,
-            test0: 'test0'
+            discount: 10
+          },
+          {
+            testt: 'testt'
           }
         ],
         outArguments: [],
@@ -70,7 +72,7 @@ module.exports = function configJSON(req) {
               direction: 'out',
               access: 'visible'
             },
-            test0: {
+            testt: {
               dataType: 'Text',
               direction: 'out',
               access: 'visible'
