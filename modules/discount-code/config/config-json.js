@@ -20,15 +20,16 @@ module.exports = function configJSON(req) {
         inArguments: [
           {
             discount: 10,
-            test1: 'test1',
-            SubscriberKey: "{{Contact.Default.SubscriberKey}}",
+            test0: 'test0',
             ContactKey: "{{Contact.Default.ContactKey}}",
-            Phone: "{{Contact.Default.Phone}}",
-            FirstName: "{{Contact.Default.FirstName}}",
-            test3: 'test3'
+            Phone: "{{Contact.Default.Phone}}"
           }
         ],
-        outArguments: [],
+        outArguments: [
+          {
+            Name: "{{Contact.Default.Name}}"
+          }
+        ],
         // Fill in the host with the host that this is running on.
         // It must run under HTTPS
         url: `https://${req.headers.host}/modules/discount-code/execute`,
@@ -63,7 +64,18 @@ module.exports = function configJSON(req) {
     schema: {
       arguments: {
         execute: {
-          inArguments: [],
+          inArguments: [{
+            ContactKey: {
+              dataType: 'Text',
+              direction: 'in',
+              access: 'visible'
+            },
+            Phone: {
+              dataType: 'Phone',
+              direction: 'out',
+              access: 'visible'
+            }
+          }],
           outArguments: [{
             discountCode: {
               dataType: 'Text',
@@ -75,32 +87,12 @@ module.exports = function configJSON(req) {
               direction: 'out',
               access: 'visible'
             },
-            test1: {
+            test0: {
               dataType: 'Text',
               direction: 'out',
               access: 'visible'
             },
-            SubscriberKey: {
-              dataType: 'Text',
-              direction: 'out',
-              access: 'visible'
-            },
-            ContactKey: {
-              dataType: 'Text',
-              direction: 'out',
-              access: 'visible'
-            },
-            Phone: {
-              dataType: 'Text',
-              direction: 'out',
-              access: 'visible'
-            },
-            FirstName: {
-              dataType: 'Text',
-              direction: 'in',
-              access: 'visible'
-            },
-            test3: {
+            Name: {
               dataType: 'Text',
               direction: 'out',
               access: 'visible'

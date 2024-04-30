@@ -76,7 +76,7 @@ function onInitActivity(payload) {
     console.log('Discount Argument', discountArgument);
 
     // TEST
-    console.log('test5');
+    console.log('test6');
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {
