@@ -72,12 +72,21 @@ function onInitActivity(payload) {
     // this would be set on the server side when the activity executes
     // (take a look at execute() in ./discountCode/app.js to see where that happens)
     const discountArgument = inArguments.find((arg) => arg.discount);
-    // TEST
-    // const test1Argument = inArguments.find((arg) => arg.test1);
-
+    
     console.log('Discount Argument', discountArgument);
+
     // TEST
-    // console.log('test1 Argument', test1Argument);
+    console.log('arg: ', arg);
+    const test1Argument = inArguments.find((arg) => arg.test1);
+    const SubscriberKeyArgument = inArguments.find((arg) => arg.SubscriberKey);
+    const ContactKeyArgument = inArguments.find((arg) => arg.ContactKey);
+    const PhoneArgument = inArguments.find((arg) => arg.Phone);
+    const FirstNameArgument = inArguments.find((arg) => arg.FirstName);
+    console.log('test1Argument: ', test1Argument);
+    console.log('SubscriberKeyArgument: ', SubscriberKeyArgument);
+    console.log('ContactKeyArgument: ', ContactKeyArgument);
+    console.log('PhoneArgument: ', PhoneArgument);
+    console.log('FirstNameArgument: ', FirstNameArgument);
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {

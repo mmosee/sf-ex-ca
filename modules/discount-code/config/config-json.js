@@ -20,7 +20,11 @@ module.exports = function configJSON(req) {
         inArguments: [
           {
             discount: 10,
-            test1: 'test1'
+            test1: 'test1',
+            SubscriberKey: "{{Contact.Default.SubscriberKey}}",
+            ContactKey: "{{Contact.Default.ContactKey}}",
+            Phone: "{{Contact.Default.Phone}}",
+            FirstName: "{{Contact.Default.FirstName}}"
           }
         ],
         outArguments: [],
@@ -73,6 +77,26 @@ module.exports = function configJSON(req) {
             test1: {
               dataType: 'Text',
               direction: 'out',
+              access: 'visible'
+            },
+            SubscriberKey: {
+              dataType: 'Text',
+              direction: 'out',
+              access: 'visible'
+            },
+            ContactKey: {
+              dataType: 'Text',
+              direction: 'out',
+              access: 'visible'
+            },
+            Phone: {
+              dataType: 'Text',
+              direction: 'out',
+              access: 'visible'
+            },
+            FirstName: {
+              dataType: 'Text',
+              direction: 'in',
               access: 'visible'
             }
           }]
