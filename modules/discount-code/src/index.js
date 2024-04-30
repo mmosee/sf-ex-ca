@@ -76,7 +76,7 @@ function onInitActivity(payload) {
     console.log('Discount Argument', discountArgument);
 
     // TEST
-    console.log('test4');
+    console.log('test5');
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {
@@ -101,7 +101,7 @@ function onDoneButtonClick() {
     //     discount: option.value,
     //     test2: 'test2',
     // }];
-    console.log('activity.arguments.execute.inArguments', activity.arguments.execute.inArguments);
+    console.log('activity.arguments.execute.inArguments', JSON.stringify(activity.arguments.execute.inArguments));
 
     // you can set the name that appears below the activity with the name property
     activity.name = `Issue ${activity.arguments.execute.inArguments[0].discount}% Code`;
