@@ -73,18 +73,7 @@ module.exports = function configJSON(req) {
     schema: {
       arguments: {
         execute: {
-          inArguments: [{
-            inAinA: {
-              dataType: 'Text',
-              direction: 'in',
-              access: 'visible'
-            },
-            outAinA: {
-              dataType: 'Text',
-              direction: 'in',
-              access: 'visible'
-            }
-          }],
+          inArguments: [],
           outArguments: [{
             discountCode: {
               dataType: 'Text',
@@ -99,17 +88,7 @@ module.exports = function configJSON(req) {
             testt: {
               dataType: 'Text',
               direction: 'out',
-              access: 'visible'
-            },
-            inAoutA: {
-              dataType: 'Text',
-              direction: 'out',
-              access: 'visible'
-            },
-            outAoutA: {
-              dataType: 'Text',
-              direction: 'out',
-              access: 'visible'
+              access: 'hidden'
             }
           }]
         }
