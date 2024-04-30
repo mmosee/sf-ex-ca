@@ -102,10 +102,10 @@ function onDoneButtonClick() {
     const select = document.getElementById('discount-code');
     const option = select.options[select.selectedIndex];
 
-    // activity.arguments.execute.inArguments = [{
-    //     discount: option.value,
-    //     test2: 'test2',
-    // }];
+    activity.arguments.execute.inArguments = [{
+        discount: option.value,
+        test2: 'test2',
+    }];
     console.log('activity.arguments.execute.inArguments', JSON.stringify(activity.arguments.execute.inArguments));
 
     // you can set the name that appears below the activity with the name property
