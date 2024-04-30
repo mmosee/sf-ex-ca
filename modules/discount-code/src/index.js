@@ -61,6 +61,7 @@ function onInitActivity(payload) {
     );
 
     const inArguments = hasInArguments ? activity.arguments.execute.inArguments : [];
+    const outArguments = hasOutArguments ? activity.arguments.execute.outArguments : [];
 
     console.log('-------- triggered:onInitActivity({obj}) --------');
     console.log('activity:\n ', JSON.stringify(activity, null, 4));
@@ -76,7 +77,11 @@ function onInitActivity(payload) {
     console.log('Discount Argument', discountArgument);
 
     // TEST
-    console.log('test9');
+    console.log('test11');
+    const inAinAArgument = inArguments.find((arg) => arg.inAinA);
+    const outAoutAArgument = outArguments.find((arg) => arg.outAoutA);
+    console.log('inAinAArgument', inAinAArgument);
+    console.log('outAoutAArgument', outAoutAArgument);
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {

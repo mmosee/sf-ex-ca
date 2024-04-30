@@ -23,9 +23,22 @@ module.exports = function configJSON(req) {
           },
           {
             testt: 'testt'
+          },
+          {
+            inAinA: 'inAinA'
+          },
+          {
+            inAoutA: 'inAoutA'
           }
         ],
-        outArguments: [],
+        outArguments: [
+          {
+            outAinA: 'outAinA'
+          },
+          {
+            outAoutA: 'outAoutA'
+          }
+        ],
         // Fill in the host with the host that this is running on.
         // It must run under HTTPS
         url: `https://${req.headers.host}/modules/discount-code/execute`,
@@ -60,7 +73,18 @@ module.exports = function configJSON(req) {
     schema: {
       arguments: {
         execute: {
-          inArguments: [],
+          inArguments: [{
+            inAinA: {
+              dataType: 'Text',
+              direction: 'in',
+              access: 'visible'
+            },
+            outAinA: {
+              dataType: 'Text',
+              direction: 'in',
+              access: 'visible'
+            }
+          }],
           outArguments: [{
             discountCode: {
               dataType: 'Text',
@@ -73,6 +97,16 @@ module.exports = function configJSON(req) {
               access: 'visible'
             },
             testt: {
+              dataType: 'Text',
+              direction: 'out',
+              access: 'visible'
+            },
+            inAoutA: {
+              dataType: 'Text',
+              direction: 'out',
+              access: 'visible'
+            },
+            outAoutA: {
               dataType: 'Text',
               direction: 'out',
               access: 'visible'
