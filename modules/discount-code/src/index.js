@@ -76,7 +76,12 @@ function onInitActivity(payload) {
     console.log('Discount Argument', discountArgument);
 
     // TEST
-    console.log('test6');
+    console.log('test7');
+    const contactIdentifierArgument = inArguments.find((arg) => arg.contactIdentifier);
+    const ContactKeyArgument = inArguments.find((arg) => arg.ContactKey);
+    
+    console.log('contactIdentifierArgument', contactIdentifierArgument);
+    console.log('ContactKeyArgument', ContactKeyArgument);
 
     // if a discountCode back argument was set, show the message in the view.
     if (discountArgument) {
