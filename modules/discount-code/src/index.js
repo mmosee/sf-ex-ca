@@ -61,6 +61,14 @@ function onInitActivity(payload) {
     );
 
     const inArguments = hasInArguments ? activity.arguments.execute.inArguments : [];
+
+    //TEST
+    const hasOutArguments = Boolean(
+        activity.arguments &&
+        activity.arguments.execute &&
+        activity.arguments.execute.outArguments &&
+        activity.arguments.execute.outArguments.length > 0
+    );
     const outArguments = hasOutArguments ? activity.arguments.execute.outArguments : [];
 
     console.log('-------- triggered:onInitActivity({obj}) --------');
