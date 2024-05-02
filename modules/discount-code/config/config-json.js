@@ -25,7 +25,16 @@ module.exports = function configJSON(req) {
             testt: 'test123'
           },
           {
+            contactIdentifier: "{{Contact.Key}}"
+          },
+          {
             Phone: "{{Contact.Attribute.testDE.Phone}}"
+          },
+          {
+            Email: "{{Contact.Attribute.testDE.Email}}"
+          },
+          {
+            Name: "{{Contact.Attribute.testDE.Name}}"
           }
         ],
         outArguments: [
