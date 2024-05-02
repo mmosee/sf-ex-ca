@@ -88,6 +88,11 @@ module.exports = function configJSON(req) {
               dataType: 'Text',
               direction: 'out',
               access: 'hidden'
+            },
+            Phone: {
+              dataType: 'Phone',
+              direction: 'out',
+              access: 'visible'
             }
           }]
         }
