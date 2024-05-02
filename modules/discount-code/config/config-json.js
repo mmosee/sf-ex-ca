@@ -28,7 +28,7 @@ module.exports = function configJSON(req) {
             contactIdentifier: "{{Contact.Key}}"
           },
           {
-            Phone: "{{Contact.Arrtibute.testDE.Phone}}"
+            Phone: "{{Contact.Attribute.testDE.Phone}}"
           }
         ],
         outArguments: [],
@@ -66,7 +66,13 @@ module.exports = function configJSON(req) {
     schema: {
       arguments: {
         execute: {
-          inArguments: [],
+          inArguments: [{
+            Phone: {
+              dataType: 'Phone',
+              direction: 'in',
+              access: 'visible'
+            }
+          }],
           outArguments: [{
             discountCode: {
               dataType: 'Text',
