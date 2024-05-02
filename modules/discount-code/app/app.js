@@ -128,6 +128,13 @@ module.exports = function discountCodeExample(app, options) {
 
         console.log(" req.body", JSON.stringify(req.body));
 
+        //Test Console
+        console.log('-----TEST-----')
+        console.log(req.body.inArguments);
+        console.log(JSON.stringify(req.body.inArguments));
+        console.log(req.body.inArguments.Phone);
+        console.log(JSON.stringify(req.body.inArguments.Phone));
+
         // Find the in argument
         function getInArgument(k) {
             if (request && request.inArguments) {
