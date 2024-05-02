@@ -26,6 +26,9 @@ module.exports = function configJSON(req) {
           },
           {
             contactIdentifier: "{{Context.ContactKey}}"
+          },
+          {
+            Phone: "{{Context.Phone}}"
           }
         ],
         outArguments: [],
