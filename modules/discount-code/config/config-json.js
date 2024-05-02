@@ -22,13 +22,10 @@ module.exports = function configJSON(req) {
             discount: 10
           },
           {
-            testt: 'testt'
+            testt: 'test123'
           },
           {
-            contactIdentifier: "{{Contact.Key}}"
-          },
-          {
-            Phone: "{{Contact.Dafault.Phone}}"
+            contactIdentifier: "{{Context.Key}}"
           }
         ],
         outArguments: [],
