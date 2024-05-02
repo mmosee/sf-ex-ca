@@ -25,6 +25,9 @@ module.exports = function configJSON(req) {
             testt: 'test123'
           },
           {
+            email: "{{InteractionDefaults.Email}}"
+          },
+          {
             contactIdentifier: "{{Contact.Key}}"
           },
           {
