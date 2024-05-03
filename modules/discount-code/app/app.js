@@ -129,10 +129,9 @@ module.exports = function discountCodeExample(app, options) {
         console.log(" req.body", JSON.stringify(req.body));
 
         //Test Console
-        console.log('-----TEST-----')
-        const jsonArrayTest1 = req.body.inArguments[0];
-        const jsonArrayTest2 = jsonArrayTest1.Phone;
-        console.log(jsonArrayTest2);
+        console.log('-----TEST-----');
+        console.log(" request", request);
+
 
         // Find the in argument
         function getInArgument(k) {
