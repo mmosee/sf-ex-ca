@@ -130,7 +130,10 @@ module.exports = function discountCodeExample(app, options) {
 
         //Test Console
         console.log('-----TEST-----');
-        console.log(" request", request);
+        const phoneJson = request.find(arg => arg.Phone);
+        const phoneValue = phoneJson.Phone;
+        console.log(phoneJson);
+        console.log(phoneValue);
 
 
         // Find the in argument
